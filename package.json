@@ -1,0 +1,88 @@
+{
+  "name": "poc-next-graphql",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Cyril LEPAGNOT",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyrill62/poc-next-graphql.git"
+  },
+  "engines": {
+    "node": ">=8.5"
+  },
+  "browserslist": "> 0.5%, not dead, node 8.5",
+  "dependencies": {
+    "@kisskissbankbank/kitten": ">= 0",
+    "@zeit/next-sass": ">= 0",
+    "@zeit/next-source-maps": ">= 0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "cross-fetch": "^3.0.1",
+    "dotenv-cli": "^1.4.0",
+    "ecstatic": "^3.3.1",
+    "graphql-react": "^8.0.0",
+    "next": "^7.0.0",
+    "next-graphql-react": "^3.0.0",
+    "next-images": ">= 0",
+    "node-sass": ">= 0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "next-routes": ">= 0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.13.0",
+    "eslint-config-env": "^3.0.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-import-order-alphabetical": "^0.0.1",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.0.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.3",
+    "prettier": "^1.16.4"
+  },
+  "scripts": {
+    "dev": "dotenv npm run dev:next",
+    "dev:next": "node server.js",
+    "build": "dotenv next build",
+    "start": "dotenv npm run start:next",
+    "start:next": "NODE_ENV=production node server.js",
+    "test": "npm run test:eslint && npm run test:prettier",
+    "test:eslint": "eslint .",
+    "test:prettier": "prettier '**/*.{json,yml,md}' -l"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint",
+    "*.{json,yml,md}": "prettier -l"
+  },
+  "eslintConfig": {
+    "extends": [
+      "env"
+    ],
+    "rules": {
+      "require-jsdoc": "off",
+      "react/prop-types": "off"
+    }
+  },
+  "prettier": {
+    "proseWrap": "never",
+    "singleQuote": true,
+    "semi": false
+  },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      "transform-inline-environment-variables"
+    ]
+  }
+}

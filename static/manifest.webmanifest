@@ -1,0 +1,15 @@
+{
+  "name": "poc-next-graphql",
+  "short_name": "Poc next + graphql",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "white",
+  "background_color": "white",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
